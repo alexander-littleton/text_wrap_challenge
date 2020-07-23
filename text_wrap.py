@@ -15,9 +15,12 @@ def text_wrap(input_string):
             output_list.append(term)
         else:
             replacement_line = current_line + " " + term
-            output_list.pop()
-            output_list.append(replacement_line)
+            output_list.pop().append(replacement_line)
 
     print("\n".join(output_list))
 
-text_wrap("Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived, and so dedicated, can long endure. We are met on a great battle field of that war. We have come to dedicate a portion of it, as a final resting place for those who died here, that the nation might live. This we may, in all propriety do. But, in a larger sense, we can not dedicate -- we can not consecrate -- we can not hallow, this ground")
+user_input = ''
+
+while user_input != 'exit':
+    user_input = input('Submit text for word wrapping or enter "exit" to quit: ')
+    if user_input != 'exit': text_wrap(user_input) 
